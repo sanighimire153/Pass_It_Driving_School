@@ -32,7 +32,7 @@ Partial Class frmLogin
         ' Button1
         ' 
         Button1.BackColor = Color.PaleTurquoise
-        Button1.Location = New Point(545, 366)
+        Button1.Location = New Point(540, 357)
         Button1.Name = "Button1"
         Button1.Size = New Size(137, 29)
         Button1.TabIndex = 2
@@ -41,21 +41,21 @@ Partial Class frmLogin
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(533, 309)
+        TextBox2.Location = New Point(512, 309)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(171, 27)
+        TextBox2.Size = New Size(209, 27)
         TextBox2.TabIndex = 3
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(533, 258)
+        TextBox1.Location = New Point(512, 258)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(171, 27)
+        TextBox1.Size = New Size(209, 27)
         TextBox1.TabIndex = 4
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(524, 411)
+        Button2.Location = New Point(524, 415)
         Button2.Name = "Button2"
         Button2.Size = New Size(180, 27)
         Button2.TabIndex = 5
