@@ -26,14 +26,15 @@ Partial Class frmLogin
         Button1 = New Button()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
+        Button2 = New Button()
         SuspendLayout()
         ' 
         ' Button1
         ' 
         Button1.BackColor = Color.PaleTurquoise
-        Button1.Location = New Point(568, 366)
+        Button1.Location = New Point(545, 366)
         Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
+        Button1.Size = New Size(137, 29)
         Button1.TabIndex = 2
         Button1.Text = "Login"
         Button1.UseVisualStyleBackColor = False
@@ -52,17 +53,27 @@ Partial Class frmLogin
         TextBox1.Size = New Size(171, 27)
         TextBox1.TabIndex = 4
         ' 
-        ' frmDashboard
+        ' Button2
+        ' 
+        Button2.Location = New Point(524, 411)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(180, 27)
+        Button2.TabIndex = 5
+        Button2.Text = "Create Account"
+        Button2.UseVisualStyleBackColor = True
+        ' 
+        ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(733, 631)
+        Controls.Add(Button2)
         Controls.Add(TextBox1)
         Controls.Add(TextBox2)
         Controls.Add(Button1)
-        Name = "frmDashboard"
+        Name = "frmLogin"
         Text = "Login"
         ResumeLayout(False)
         PerformLayout()
@@ -70,5 +81,6 @@ Partial Class frmLogin
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button2 As Button
 
 End Class
