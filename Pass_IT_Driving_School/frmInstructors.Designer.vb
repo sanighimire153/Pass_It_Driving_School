@@ -22,9 +22,17 @@ Partial Class frmInstructors
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "frmInstructors"
+        SuspendLayout()
+        ' 
+        ' frmInstructors
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.Untitled_design
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(800, 450)
+        Name = "frmInstructors"
+        Text = "frmInstructors"
+        ResumeLayout(False)
     End Sub
 End Class

@@ -78,19 +78,6 @@
 
     End Sub
 
-    ' ================= CREATE BUTTON (Button2) =================
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        ' OPTION 1: Open Create Account Form
-        Dim createForm As New frmCreate
-        createForm.Show()
-
-        ' OPTION 2 (if you DON'T have frmCreate yet)
-        ' MessageBox.Show("Create account feature coming soon!", "Info")
-
-        Me.Hide()
-
-    End Sub
 
 End Class

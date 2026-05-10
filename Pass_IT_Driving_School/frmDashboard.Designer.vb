@@ -22,10 +22,28 @@ Partial Class frmDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        components = New ComponentModel.Container()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        SuspendLayout()
+        ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(61, 4)
+        ' 
+        ' frmDashboard
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        BackgroundImage = My.Resources.Resources.Untitled_design
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(939, 450)
+        Name = "frmDashboard"
         Text = "Form1"
+        ResumeLayout(False)
     End Sub
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 
 End Class
