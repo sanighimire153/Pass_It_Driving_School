@@ -34,15 +34,15 @@ Partial Class frmStudents
         RichTextBox1 = New RichTextBox()
         Label1 = New Label()
         TableLayoutPanel1 = New TableLayoutPanel()
-        Button4 = New Button()
         ComboBox1 = New ComboBox()
+        MenuStrip1 = New MenuStrip()
         SuspendLayout()
         ' 
         ' Button1
         ' 
         Button1.BackColor = Color.DeepSkyBlue
         Button1.ForeColor = SystemColors.ButtonFace
-        Button1.Location = New Point(39, 240)
+        Button1.Location = New Point(289, 231)
         Button1.Name = "Button1"
         Button1.Size = New Size(94, 29)
         Button1.TabIndex = 1
@@ -51,7 +51,7 @@ Partial Class frmStudents
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(171, 240)
+        Button2.Location = New Point(471, 231)
         Button2.Name = "Button2"
         Button2.Size = New Size(94, 29)
         Button2.TabIndex = 2
@@ -62,58 +62,58 @@ Partial Class frmStudents
         ' 
         Button3.BackColor = Color.IndianRed
         Button3.ForeColor = Color.Transparent
-        Button3.Location = New Point(317, 240)
+        Button3.Location = New Point(659, 231)
         Button3.Name = "Button3"
-        Button3.Size = New Size(94, 29)
+        Button3.Size = New Size(103, 29)
         Button3.TabIndex = 3
         Button3.Text = "Delete"
         Button3.UseVisualStyleBackColor = False
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(62, 24)
+        TextBox1.Location = New Point(289, 49)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(125, 27)
         TextBox1.TabIndex = 4
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(62, 82)
+        TextBox2.Location = New Point(289, 92)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(125, 27)
         TextBox2.TabIndex = 5
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(62, 161)
+        TextBox3.Location = New Point(289, 143)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(125, 27)
         TextBox3.TabIndex = 6
         ' 
         ' TextBox5
         ' 
-        TextBox5.Location = New Point(298, 24)
+        TextBox5.Location = New Point(455, 49)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(125, 27)
         TextBox5.TabIndex = 8
         ' 
         ' TextBox6
         ' 
-        TextBox6.Location = New Point(298, 161)
+        TextBox6.Location = New Point(455, 143)
         TextBox6.Name = "TextBox6"
         TextBox6.Size = New Size(125, 27)
         TextBox6.TabIndex = 9
         ' 
         ' TextBox8
         ' 
-        TextBox8.Location = New Point(298, 82)
+        TextBox8.Location = New Point(455, 92)
         TextBox8.Name = "TextBox8"
         TextBox8.Size = New Size(125, 27)
         TextBox8.TabIndex = 11
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.Location = New Point(492, 82)
+        RichTextBox1.Location = New Point(637, 92)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.Size = New Size(125, 80)
         RichTextBox1.TabIndex = 12
@@ -123,7 +123,7 @@ Partial Class frmStudents
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
-        Label1.Location = New Point(39, 302)
+        Label1.Location = New Point(248, 303)
         Label1.Name = "Label1"
         Label1.Size = New Size(86, 20)
         Label1.TabIndex = 13
@@ -137,7 +137,7 @@ Partial Class frmStudents
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 62.5806465F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 234F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 150F))
-        TableLayoutPanel1.Location = New Point(39, 325)
+        TableLayoutPanel1.Location = New Point(248, 326)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 5
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
@@ -145,26 +145,25 @@ Partial Class frmStudents
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.Size = New Size(695, 125)
+        TableLayoutPanel1.Size = New Size(552, 124)
         TableLayoutPanel1.TabIndex = 14
-        ' 
-        ' Button4
-        ' 
-        Button4.BackColor = SystemColors.ActiveCaption
-        Button4.Location = New Point(477, 240)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(94, 29)
-        Button4.TabIndex = 15
-        Button4.Text = "Back"
-        Button4.UseVisualStyleBackColor = False
         ' 
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(473, 24)
+        ComboBox1.Location = New Point(637, 48)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(151, 28)
         ComboBox1.TabIndex = 16
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.ImageScalingSize = New Size(20, 20)
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.TabIndex = 17
+        MenuStrip1.Text = "MenuStrip1"
         ' 
         ' frmStudents
         ' 
@@ -175,7 +174,6 @@ Partial Class frmStudents
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(ComboBox1)
-        Controls.Add(Button4)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(Label1)
         Controls.Add(RichTextBox1)
@@ -188,8 +186,10 @@ Partial Class frmStudents
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
         Name = "frmStudents"
-        Text = "Registration"
+        Text = "Student"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -205,7 +205,7 @@ Partial Class frmStudents
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Button4 As Button
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents MenuStrip1 As MenuStrip
 
 End Class

@@ -24,6 +24,7 @@ Partial Class frmDashboard
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         ContextMenuStrip1 = New ContextMenuStrip(components)
+        ContextMenuStrip2 = New ContextMenuStrip(components)
         SuspendLayout()
         ' 
         ' ContextMenuStrip1
@@ -31,6 +32,12 @@ Partial Class frmDashboard
         ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
+        ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.ImageScalingSize = New Size(20, 20)
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(211, 32)
         ' 
         ' frmDashboard
         ' 
@@ -45,5 +52,6 @@ Partial Class frmDashboard
     End Sub
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
 
 End Class
