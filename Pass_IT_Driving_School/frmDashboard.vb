@@ -162,25 +162,8 @@
 
             End Function
 
-        ' =====================================================
-        ' CARDS
-        ' =====================================================
 
-        Dim card1 = CreateCard("Students", "45", Color.RoyalBlue)
-        Dim card2 = CreateCard("Instructors", "12", Color.SeaGreen)
-        Dim card3 = CreateCard("Lessons Today", "6", Color.DarkOrange)
 
-        leftPanel.Controls.Add(card1)
-        leftPanel.Controls.Add(card2)
-        leftPanel.Controls.Add(card3)
-
-        ' =====================================================
-        ' CARD EVENTS
-        ' =====================================================
-
-        AddHandler card1.Click, AddressOf OpenStudents
-        AddHandler card2.Click, AddressOf OpenInstructors
-        AddHandler card3.Click, AddressOf OpenLessons
 
     End Sub
 

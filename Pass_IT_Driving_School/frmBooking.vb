@@ -90,16 +90,7 @@
                                          SwitchForm(New frmReports)
                                      End Sub
 
-        ' =====================================================
-        ' PAGE TITLE
-        ' =====================================================
-        Dim lblTitle As New Label
-        lblTitle.Text = "BOOKING MANAGEMENT"
-        lblTitle.Font = New Font("Segoe UI", 20, FontStyle.Bold)
-        lblTitle.ForeColor = Color.Black
-        lblTitle.Location = New Point(260, 30)
-        lblTitle.AutoSize = True
-        Me.Controls.Add(lblTitle)
+
 
         ' =====================================================
         ' TABLE SCROLL

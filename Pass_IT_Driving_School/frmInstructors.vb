@@ -135,9 +135,9 @@
 
         ' ================= COURSE LIST =================
         ComboBox1.Items.Clear()
-        ComboBox1.Items.Add("Software Engineering")
-        ComboBox1.Items.Add("Networking")
-        ComboBox1.Items.Add("Database")
+        ComboBox1.Items.Add("Basic")
+        ComboBox1.Items.Add("Advance")
+        ComboBox1.Items.Add("Professional")
         ComboBox1.Items.Add("Cyber Security")
         ComboBox1.Items.Add("AI & ML")
         ComboBox1.Text = "Select Course"

@@ -23,7 +23,6 @@ Partial Class frmBooking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        MenuStrip1 = New MenuStrip()
         ComboBox1 = New ComboBox()
         ComboBox2 = New ComboBox()
         ComboBox3 = New ComboBox()
@@ -35,15 +34,6 @@ Partial Class frmBooking
         Label1 = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         SuspendLayout()
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 24)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
         ' 
         ' ComboBox1
         ' 
@@ -156,15 +146,11 @@ Partial Class frmBooking
         Controls.Add(ComboBox3)
         Controls.Add(ComboBox2)
         Controls.Add(ComboBox1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
         Name = "frmBooking"
         Text = "frmBooking"
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox3 As ComboBox

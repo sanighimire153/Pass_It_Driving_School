@@ -30,12 +30,10 @@ Partial Class frmStudents
         TextBox3 = New TextBox()
         TextBox5 = New TextBox()
         TextBox6 = New TextBox()
-        TextBox8 = New TextBox()
         RichTextBox1 = New RichTextBox()
         Label1 = New Label()
         TableLayoutPanel1 = New TableLayoutPanel()
         ComboBox1 = New ComboBox()
-        MenuStrip1 = New MenuStrip()
         SuspendLayout()
         ' 
         ' Button1
@@ -94,28 +92,21 @@ Partial Class frmStudents
         ' 
         TextBox5.Location = New Point(455, 49)
         TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(125, 27)
+        TextBox5.Size = New Size(151, 27)
         TextBox5.TabIndex = 8
         ' 
         ' TextBox6
         ' 
-        TextBox6.Location = New Point(455, 143)
+        TextBox6.Location = New Point(455, 92)
         TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(125, 27)
+        TextBox6.Size = New Size(151, 27)
         TextBox6.TabIndex = 9
-        ' 
-        ' TextBox8
-        ' 
-        TextBox8.Location = New Point(455, 92)
-        TextBox8.Name = "TextBox8"
-        TextBox8.Size = New Size(125, 27)
-        TextBox8.TabIndex = 11
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.Location = New Point(637, 92)
+        RichTextBox1.Location = New Point(637, 49)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(125, 80)
+        RichTextBox1.Size = New Size(137, 121)
         RichTextBox1.TabIndex = 12
         RichTextBox1.Text = ""
         ' 
@@ -151,19 +142,10 @@ Partial Class frmStudents
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(637, 48)
+        ComboBox1.Location = New Point(455, 142)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(151, 28)
         ComboBox1.TabIndex = 16
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 24)
-        MenuStrip1.TabIndex = 17
-        MenuStrip1.Text = "MenuStrip1"
         ' 
         ' frmStudents
         ' 
@@ -177,7 +159,6 @@ Partial Class frmStudents
         Controls.Add(TableLayoutPanel1)
         Controls.Add(Label1)
         Controls.Add(RichTextBox1)
-        Controls.Add(TextBox8)
         Controls.Add(TextBox6)
         Controls.Add(TextBox5)
         Controls.Add(TextBox3)
@@ -186,8 +167,6 @@ Partial Class frmStudents
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
         Name = "frmStudents"
         Text = "Student"
         ResumeLayout(False)
@@ -201,11 +180,9 @@ Partial Class frmStudents
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox8 As TextBox
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents MenuStrip1 As MenuStrip
 
 End Class

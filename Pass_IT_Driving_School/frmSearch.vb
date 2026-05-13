@@ -37,23 +37,29 @@ Public Class frmSearch
         ' =====================================================
         ' SIDE MENU
         ' =====================================================
-        Dim sideMenu As New Panel
 
+        Dim sideMenu As New Panel
         sideMenu.Width = menuWidth
         sideMenu.Dock = DockStyle.Left
         sideMenu.BackColor = Color.FromArgb(30, 30, 30)
-
         Me.Controls.Add(sideMenu)
 
         ' =====================================================
         ' MENU TITLE
         ' =====================================================
 
-
+        Dim lblTitle As New Label
+        lblTitle.Text = "Driving School"
+        lblTitle.ForeColor = Color.White
+        lblTitle.Font = New Font("Segoe UI", 16, FontStyle.Bold)
+        lblTitle.AutoSize = True
+        lblTitle.Location = New Point(20, 25)
+        sideMenu.Controls.Add(lblTitle)
 
         ' =====================================================
-        ' MENU BUTTON FUNCTION
+        ' MENU BUTTON FACTORY
         ' =====================================================
+
         Dim CreateMenuButton =
             Function(text As String, top As Integer) As Button
 
@@ -68,24 +74,94 @@ Public Class frmSearch
 
                 btn.BackColor = Color.FromArgb(45, 45, 45)
                 btn.ForeColor = Color.White
+
                 btn.Font = New Font("Segoe UI", 10, FontStyle.Bold)
                 btn.Cursor = Cursors.Hand
+
+                AddHandler btn.MouseEnter,
+                    Sub()
+                        btn.BackColor = Color.FromArgb(0, 120, 215)
+                    End Sub
+
+                AddHandler btn.MouseLeave,
+                    Sub()
+                        btn.BackColor = Color.FromArgb(45, 45, 45)
+                    End Sub
 
                 Return btn
 
             End Function
 
         ' =====================================================
-        ' MENU BUTTONS
+        ' MENU BUTTONS (FIXED + WORKING)
         ' =====================================================
-        sideMenu.Controls.Add(CreateMenuButton("Dashboard", 90))
-        sideMenu.Controls.Add(CreateMenuButton("Students", 145))
-        sideMenu.Controls.Add(CreateMenuButton("Instructors", 200))
-        sideMenu.Controls.Add(CreateMenuButton("Lessons", 255))
-        sideMenu.Controls.Add(CreateMenuButton("Booking", 310))
-        sideMenu.Controls.Add(CreateMenuButton("Search", 365))
-        sideMenu.Controls.Add(CreateMenuButton("Reports", 420))
 
+        Dim btnDashboard = CreateMenuButton("Dashboard", 90)
+        Dim btnStudents = CreateMenuButton("Students", 145)
+        Dim btnInstructors = CreateMenuButton("Instructors", 200)
+        Dim btnLessons = CreateMenuButton("Lessons", 255)
+        Dim btnBooking = CreateMenuButton("Booking", 310)
+        Dim btnSearch = CreateMenuButton("Search", 365)
+        Dim btnReports = CreateMenuButton("Reports", 420)
+
+        sideMenu.Controls.Add(btnDashboard)
+        sideMenu.Controls.Add(btnStudents)
+        sideMenu.Controls.Add(btnInstructors)
+        sideMenu.Controls.Add(btnLessons)
+        sideMenu.Controls.Add(btnBooking)
+        sideMenu.Controls.Add(btnSearch)
+        sideMenu.Controls.Add(btnReports)
+
+        ' =====================================================
+        ' MENU EVENTS (FIXED)
+        ' =====================================================
+
+        AddHandler btnDashboard.Click,
+            Sub()
+                Dim f As New frmDashboard
+                f.Show()
+                Me.Hide()
+            End Sub
+
+        AddHandler btnStudents.Click,
+            Sub()
+                Dim f As New frmStudents
+                f.Show()
+                Me.Hide()
+            End Sub
+
+        AddHandler btnInstructors.Click,
+            Sub()
+                Dim f As New frmInstructors
+                f.Show()
+                Me.Hide()
+            End Sub
+
+        AddHandler btnLessons.Click,
+            Sub()
+                Dim f As New frmLessons
+                f.Show()
+                Me.Hide()
+            End Sub
+
+        AddHandler btnBooking.Click,
+            Sub()
+                Dim f As New frmBooking
+                f.Show()
+                Me.Hide()
+            End Sub
+
+        AddHandler btnSearch.Click,
+            Sub()
+                MessageBox.Show("You are already on Search page.")
+            End Sub
+
+        AddHandler btnReports.Click,
+            Sub()
+                Dim f As New frmReports
+                f.Show()
+                Me.Hide()
+            End Sub
 
 
 

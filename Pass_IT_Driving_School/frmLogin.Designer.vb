@@ -26,7 +26,6 @@ Partial Class frmLogin
         Button1 = New Button()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
-        Button2 = New Button()
         SuspendLayout()
         ' 
         ' Button1
@@ -53,15 +52,6 @@ Partial Class frmLogin
         TextBox1.Size = New Size(209, 27)
         TextBox1.TabIndex = 4
         ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(524, 415)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(180, 27)
-        Button2.TabIndex = 5
-        Button2.Text = "Create Account"
-        Button2.UseVisualStyleBackColor = True
-        ' 
         ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -69,7 +59,6 @@ Partial Class frmLogin
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(733, 631)
-        Controls.Add(Button2)
         Controls.Add(TextBox1)
         Controls.Add(TextBox2)
         Controls.Add(Button1)
@@ -81,6 +70,5 @@ Partial Class frmLogin
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
 
 End Class
