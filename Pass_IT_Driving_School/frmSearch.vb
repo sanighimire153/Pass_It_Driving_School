@@ -44,17 +44,6 @@ Public Class frmSearch
         sideMenu.BackColor = Color.FromArgb(30, 30, 30)
         Me.Controls.Add(sideMenu)
 
-        ' =====================================================
-        ' MENU TITLE
-        ' =====================================================
-
-        Dim lblTitle As New Label
-        lblTitle.Text = "Driving School"
-        lblTitle.ForeColor = Color.White
-        lblTitle.Font = New Font("Segoe UI", 16, FontStyle.Bold)
-        lblTitle.AutoSize = True
-        lblTitle.Location = New Point(20, 25)
-        sideMenu.Controls.Add(lblTitle)
 
         ' =====================================================
         ' MENU BUTTON FACTORY

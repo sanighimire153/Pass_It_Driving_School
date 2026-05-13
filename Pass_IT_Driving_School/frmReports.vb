@@ -56,19 +56,7 @@ Public Class frmReports
 
         Me.Controls.Add(sideMenu)
 
-        ' =====================================================
-        ' MENU TITLE
-        ' =====================================================
 
-        Dim lblTitle As New Label
-
-        lblTitle.Text = "Driving School"
-        lblTitle.ForeColor = Color.White
-        lblTitle.Font = New Font("Segoe UI", 16, FontStyle.Bold)
-        lblTitle.AutoSize = True
-        lblTitle.Location = New Point(20, 30)
-
-        sideMenu.Controls.Add(lblTitle)
 
         ' =====================================================
         ' MENU BUTTON FUNCTION
