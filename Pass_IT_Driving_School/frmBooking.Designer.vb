@@ -23,6 +23,7 @@ Partial Class frmBooking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBooking))
         ComboBox1 = New ComboBox()
         ComboBox2 = New ComboBox()
         ComboBox3 = New ComboBox()
@@ -134,7 +135,7 @@ Partial Class frmBooking
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Untitled_design
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(Label1)

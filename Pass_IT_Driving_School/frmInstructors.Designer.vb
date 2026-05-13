@@ -22,6 +22,7 @@ Partial Class frmInstructors
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInstructors))
         MenuStrip1 = New MenuStrip()
         TextBox1 = New TextBox()
         TextBox2 = New TextBox()
@@ -175,7 +176,7 @@ Partial Class frmInstructors
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Untitled_design
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(ComboBox1)

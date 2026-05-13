@@ -23,6 +23,7 @@ Partial Class frmDashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         ContextMenuStrip1 = New ContextMenuStrip(components)
         ContextMenuStrip2 = New ContextMenuStrip(components)
         SuspendLayout()
@@ -37,13 +38,13 @@ Partial Class frmDashboard
         ' 
         ContextMenuStrip2.ImageScalingSize = New Size(20, 20)
         ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(211, 32)
+        ContextMenuStrip2.Size = New Size(61, 4)
         ' 
         ' frmDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Untitled_design
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(939, 450)
         Name = "frmDashboard"
