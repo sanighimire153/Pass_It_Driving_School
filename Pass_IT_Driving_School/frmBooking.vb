@@ -1,29 +1,21 @@
-﻿Public Class frmStudents
+﻿Public Class frmBooking
 
     ' =====================================================
     ' DATA STORAGE
     ' =====================================================
 
-    Private studentTable As New List(Of String())
+    Private bookingTable As New List(Of String())
 
     Private scrollOffset As Integer = 0
     Private rowHeight As Integer = 35
 
-    ' =====================================================
-    ' FORM LOAD
-    ' =====================================================
+    Private Sub frmBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    Private Sub frmStudents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.Text = "Students"
-        Me.BackColor = Color.White
-        Me.WindowState = FormWindowState.Maximized
-        Me.Font = New Font("Segoe UI", 9)
 
         ' =====================================================
         ' LEFT MENU
         ' =====================================================
-
         Dim sideMenu As New Panel
         sideMenu.Width = 220
         sideMenu.Dock = DockStyle.Left
@@ -37,7 +29,6 @@
                 btn.Text = text
                 btn.Size = New Size(180, 45)
                 btn.Location = New Point(20, top)
-
                 btn.FlatStyle = FlatStyle.Flat
                 btn.FlatAppearance.BorderSize = 0
                 btn.BackColor = Color.FromArgb(45, 45, 45)
@@ -49,6 +40,9 @@
 
             End Function
 
+        ' =====================================================
+        ' MENU BUTTONS
+        ' =====================================================
         Dim btnDashboard = CreateMenuButton("Dashboard", 80)
         Dim btnStudents = CreateMenuButton("Students", 140)
         Dim btnInstructors = CreateMenuButton("Instructors", 200)
@@ -68,48 +62,44 @@
         ' =====================================================
         ' MENU EVENTS
         ' =====================================================
-
         AddHandler btnDashboard.Click, Sub()
-                                           Dim f As New frmDashboard
-                                           f.Show()
-                                           Me.Hide()
+                                           SwitchForm(New frmDashboard)
                                        End Sub
 
         AddHandler btnStudents.Click, Sub()
-                                          Dim f As New frmStudents
-                                          f.Show()
-                                          Me.Hide()
+                                          SwitchForm(New frmStudents)
                                       End Sub
 
         AddHandler btnInstructors.Click, Sub()
-                                             Dim f As New frmInstructors
-                                             f.Show()
-                                             Me.Hide()
+                                             SwitchForm(New frmInstructors)
                                          End Sub
 
         AddHandler btnLessons.Click, Sub()
-                                         Dim f As New frmLessons
-                                         f.Show()
-                                         Me.Hide()
+                                         SwitchForm(New frmLessons)
                                      End Sub
 
         AddHandler btnBooking.Click, Sub()
-                                         Dim f As New frmBooking
-                                         f.Show()
-                                         Me.Hide()
+                                         SwitchForm(New frmBooking)
                                      End Sub
 
         AddHandler btnSearch.Click, Sub()
-                                        Dim f As New frmSearch
-                                        f.Show()
-                                        Me.Hide()
+                                        SwitchForm(New frmSearch)
                                     End Sub
 
         AddHandler btnReports.Click, Sub()
-                                         Dim f As New frmReports
-                                         f.Show()
-                                         Me.Hide()
+                                         SwitchForm(New frmReports)
                                      End Sub
+
+        ' =====================================================
+        ' PAGE TITLE
+        ' =====================================================
+        Dim lblTitle As New Label
+        lblTitle.Text = "BOOKING MANAGEMENT"
+        lblTitle.Font = New Font("Segoe UI", 20, FontStyle.Bold)
+        lblTitle.ForeColor = Color.Black
+        lblTitle.Location = New Point(260, 30)
+        lblTitle.AutoSize = True
+        Me.Controls.Add(lblTitle)
 
         ' =====================================================
         ' TABLE SCROLL
@@ -118,10 +108,31 @@
         TableLayoutPanel1.AutoScroll = True
         AddHandler TableLayoutPanel1.MouseWheel, AddressOf Table_MouseWheel
 
-        ComboBox1.Items.Add("Mark Wilson")
+        ' =====================================================
+        ' COMBOBOX DATA
+        ' =====================================================
+
+        ComboBox1.Items.Add("John Smith")
         ComboBox1.Items.Add("David Brown")
         ComboBox1.Items.Add("Lisa Taylor")
 
+        ComboBox2.Items.Add("Mr Wilson")
+        ComboBox2.Items.Add("Mr David")
+        ComboBox2.Items.Add("Mr Alex")
+
+        ComboBox3.Items.Add("Driving")
+        ComboBox3.Items.Add("Parking")
+        ComboBox3.Items.Add("Theory")
+
+    End Sub
+
+    ' =====================================================
+    ' NAVIGATION FUNCTION
+    ' =====================================================
+
+    Private Sub SwitchForm(f As Form)
+        f.Show()
+        Me.Hide()
     End Sub
 
     ' =====================================================
@@ -130,38 +141,42 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        If TextBox1.Text.Trim = "" Or TextBox2.Text.Trim = "" Or TextBox3.Text.Trim = "" Then
+        If ComboBox1.Text.Trim = "" Or
+           ComboBox2.Text.Trim = "" Or
+           ComboBox3.Text.Trim = "" Then
 
-            MessageBox.Show("Please Fill Required Fields", "Warning",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please Fill Required Fields",
+                            "Warning",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
+
             Exit Sub
 
         End If
 
-        Dim fullName As String = TextBox2.Text & " " & TextBox3.Text
-
-        studentTable.Add(New String() {
-            TextBox1.Text,
-            fullName,
-            TextBox5.Text,
-            TextBox8.Text
+        bookingTable.Add(New String() {
+            ComboBox1.Text,
+            ComboBox2.Text,
+            ComboBox3.Text,
+            DateTimePicker1.Value.ToShortDateString()
         })
 
         TableLayoutPanel1.Refresh()
 
-        TextBox1.Clear()
-        TextBox2.Clear()
-        TextBox3.Clear()
-        TextBox5.Clear()
-        TextBox6.Clear()
-        TextBox8.Clear()
-        RichTextBox1.Clear()
-
         ComboBox1.SelectedIndex = -1
-        ComboBox1.Text = ""
+        ComboBox2.SelectedIndex = -1
+        ComboBox3.SelectedIndex = -1
 
-        MessageBox.Show("Student Saved Successfully", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        ComboBox3.Text = ""
+
+        DateTimePicker1.Value = DateTime.Now
+
+        MessageBox.Show("Booking Saved Successfully",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information)
 
     End Sub
 
@@ -171,16 +186,15 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-        TextBox1.Clear()
-        TextBox2.Clear()
-        TextBox3.Clear()
-        TextBox5.Clear()
-        TextBox6.Clear()
-        TextBox8.Clear()
-
-        RichTextBox1.Clear()
         ComboBox1.SelectedIndex = -1
+        ComboBox2.SelectedIndex = -1
+        ComboBox3.SelectedIndex = -1
+
         ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        ComboBox3.Text = ""
+
+        DateTimePicker1.Value = DateTime.Now
 
     End Sub
 
@@ -190,14 +204,24 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        If studentTable.Count > 0 Then
-            studentTable.RemoveAt(studentTable.Count - 1)
+        If bookingTable.Count > 0 Then
+
+            bookingTable.RemoveAt(bookingTable.Count - 1)
+
             TableLayoutPanel1.Refresh()
-            MessageBox.Show("Last Student Deleted", "Delete",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            MessageBox.Show("Last Booking Deleted",
+                            "Delete",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
+
         Else
-            MessageBox.Show("No Data Found", "Delete",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            MessageBox.Show("No Data Found",
+                            "Delete",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information)
+
         End If
 
     End Sub
@@ -226,7 +250,13 @@
 
         Dim g As Graphics = e.Graphics
 
-        Dim headers() As String = {"Student ID", "Full Name", "Phone", "Status"}
+        Dim headers() As String = {
+            "Student",
+            "Instructor",
+            "Lesson",
+            "Date"
+        }
+
         Dim colWidth As Integer = TableLayoutPanel1.Width \ 4
 
         Dim headerFont As New Font("Segoe UI", 9, FontStyle.Bold)
@@ -241,42 +271,101 @@
         Dim textBrush As New SolidBrush(Color.Black)
         Dim borderPen As New Pen(Color.LightGray)
 
+        ' =====================================================
         ' HEADER
+        ' =====================================================
+
         For col As Integer = 0 To 3
-            Dim rect As New Rectangle(col * colWidth, 0, colWidth, rowHeight)
+
+            Dim rect As New Rectangle(col * colWidth,
+                                      0,
+                                      colWidth,
+                                      rowHeight)
+
             g.FillRectangle(headerBrush, rect)
             g.DrawRectangle(borderPen, rect)
-            g.DrawString(headers(col), headerFont, headerTextBrush, rect.X + 5, rect.Y + 10)
+
+            g.DrawString(headers(col),
+                         headerFont,
+                         headerTextBrush,
+                         rect.X + 5,
+                         rect.Y + 10)
+
         Next
 
-        Dim visibleRows As Integer = (TableLayoutPanel1.Height \ rowHeight) - 1
+        ' =====================================================
+        ' ROWS
+        ' =====================================================
+
+        Dim visibleRows As Integer =
+            (TableLayoutPanel1.Height \ rowHeight) - 1
+
         Dim startRow As Integer = scrollOffset
-        Dim endRow As Integer = Math.Min(studentTable.Count - 1, startRow + visibleRows)
+
+        Dim endRow As Integer =
+            Math.Min(bookingTable.Count - 1,
+                     startRow + visibleRows)
 
         Dim displayRow As Integer = 0
 
         For row As Integer = startRow To endRow
 
-            Dim bg As SolidBrush = If(row Mod 2 = 0, rowBrush1, rowBrush2)
+            Dim bg As SolidBrush =
+                If(row Mod 2 = 0,
+                   rowBrush1,
+                   rowBrush2)
 
             For col As Integer = 0 To 3
 
-                Dim rect As New Rectangle(col * colWidth,
-                                           (displayRow + 1) * rowHeight,
-                                           colWidth, rowHeight)
+                Dim rect As New Rectangle(
+                    col * colWidth,
+                    (displayRow + 1) * rowHeight,
+                    colWidth,
+                    rowHeight)
 
                 g.FillRectangle(bg, rect)
                 g.DrawRectangle(borderPen, rect)
 
-                g.DrawString(studentTable(row)(col),
-                             rowFont, textBrush,
-                             rect.X + 5, rect.Y + 10)
+                g.DrawString(
+                    bookingTable(row)(col),
+                    rowFont,
+                    textBrush,
+                    rect.X + 5,
+                    rect.Y + 10)
 
             Next
 
             displayRow += 1
 
         Next
+
+    End Sub
+
+    ' =====================================================
+    ' OTHER EVENTS
+    ' =====================================================
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 
