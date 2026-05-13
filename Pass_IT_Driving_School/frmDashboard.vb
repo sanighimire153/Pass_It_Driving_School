@@ -1,4 +1,7 @@
-﻿Public Class frmDashboard
+﻿Imports System.Drawing
+Imports System.Windows.Forms
+
+Public Class frmDashboard
 
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -65,9 +68,7 @@
         ' =====================================================
 
         AddHandler btnDashboard.Click, Sub()
-                                           Dim f As New frmDashboard
-                                           f.Show()
-                                           Me.Hide()
+                                           MessageBox.Show("You are already on Dashboard.")
                                        End Sub
 
         AddHandler btnStudents.Click, Sub()
@@ -105,93 +106,6 @@
                                          f.Show()
                                          Me.Hide()
                                      End Sub
-
-        ' =====================================================
-        ' MAIN CONTAINER
-        ' =====================================================
-
-        Dim mainPanel As New Panel
-        mainPanel.Dock = DockStyle.Fill
-        mainPanel.Padding = New Padding(20)
-        mainPanel.BackColor = Color.White
-        Me.Controls.Add(mainPanel)
-
-        ' =====================================================
-        ' LEFT PANEL (CARDS)
-        ' =====================================================
-
-        Dim leftPanel As New FlowLayoutPanel
-        leftPanel.Dock = DockStyle.Left
-        leftPanel.Width = 700
-        leftPanel.FlowDirection = FlowDirection.LeftToRight
-        leftPanel.WrapContents = True
-        leftPanel.AutoScroll = True
-        leftPanel.Padding = New Padding(10)
-        mainPanel.Controls.Add(leftPanel)
-
-        ' =====================================================
-        ' CARD FUNCTION
-        ' =====================================================
-
-        Dim CreateCard =
-            Function(title As String, value As String, color As Color) As GroupBox
-
-                Dim g As New GroupBox
-                g.Text = title
-                g.Size = New Size(220, 140)
-                g.Font = New Font("Segoe UI", 10, FontStyle.Bold)
-                g.BackColor = Color.White
-
-                Dim lblValue As New Label
-                lblValue.Text = value
-                lblValue.Font = New Font("Segoe UI", 24, FontStyle.Bold)
-                lblValue.ForeColor = color
-                lblValue.Location = New Point(20, 35)
-                lblValue.AutoSize = True
-
-                Dim lblText As New Label
-                lblText.Text = title
-                lblText.Font = New Font("Segoe UI", 10)
-                lblText.Location = New Point(20, 90)
-                lblText.AutoSize = True
-
-                g.Controls.Add(lblValue)
-                g.Controls.Add(lblText)
-
-                Return g
-
-            End Function
-
-
-
-
-    End Sub
-
-    ' =====================================================
-    ' NAVIGATION
-    ' =====================================================
-
-    Private Sub OpenStudents(sender As Object, e As EventArgs)
-
-        Dim f As New frmStudents
-        f.Show()
-        Me.Hide()
-
-    End Sub
-
-    Private Sub OpenInstructors(sender As Object, e As EventArgs)
-
-        Dim f As New frmInstructors
-        f.Show()
-        Me.Hide()
-
-    End Sub
-
-    Private Sub OpenLessons(sender As Object, e As EventArgs)
-
-        Dim f As New frmLessons
-        f.Show()
-        Me.Hide()
 
     End Sub
 
